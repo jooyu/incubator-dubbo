@@ -337,6 +337,7 @@ public class ExtensionLoader<T> {
             holder = cachedInstances.get(name);
         }
         Object instance = holder.get();
+        //双重检测
         if (instance == null) {
             synchronized (holder) {
                 instance = holder.get();
